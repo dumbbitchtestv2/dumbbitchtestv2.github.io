@@ -89,14 +89,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
 
 
-        <script type="text/javascript">
+       <script type="text/javascript">
         // hides score screen
         $("#show").hide();
         $("#about").hide();
         $('#submit').click(function() {
             var check_list = document.querySelectorAll('input[type="checkbox"]:checked');
             var check_total = check_list.length;
-            $('#score').html("Score: " + check_total*4 + "% Dumb Bitch");
+            var comment;
+  	if (check_total*4 >= 0  && check_total*4 <= 10) {
+    comment = "tbh you're a smart bitch"
+     	} 
+  	if (check_total*4 > 10  && check_total*4 <= 20) {
+    comment = "honestly not that dumb of a bitch"
+    	} 
+	if (check_total*4 > 20  && check_total*4 <= 30) {
+    comment = "pretty smart for a dumb bitch"
+    	}
+	if (check_total*4 > 30  && check_total*4 <= 40) {
+    comment = "you're a moderately dumb bitch"
+    	}
+	if (check_total*4 > 40  && check_total*4 <= 50) {
+    comment = "you have average dumb bitch levels"
+    	}
+	if (check_total*4 > 50  && check_total*4 <= 60) {
+    comment = "oof, you're kind of a dumb bitch"
+    	}
+	if (check_total*4 > 60  && check_total*4 <= 70) {
+    comment = "okay wow you're a pretty dumb bitch"
+    	}
+	if (check_total*4 > 70  && check_total*4 <= 80) {
+    comment = "yikes you're honestly a dumb bitch sry"
+    	}
+	if (check_total*4 > 80  && check_total*4 <= 90) {
+    comment = "damn, you really do be a dumb bitch tho wow"
+    	}
+	if (check_total*4 > 90  && check_total*4 <= 100) {
+    comment = "congratulations! you are the dumbest of bitches!!!"
+    	}
+
+
+ 
+ 
+            $('#score').html("Score: " + check_total*4 + "% Dumb Bitch")
+            $('#comment').html(comment)
             $("#show").show();
             $("#hide").hide();
         });
